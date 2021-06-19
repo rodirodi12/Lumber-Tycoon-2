@@ -1,0 +1,52 @@
+for i, v in pairs(game:GetService("Workspace").Properties:GetChildren()) do
+		if v:FindFirstChild("Owner") and v.Owner.Value == game.Players.LocalPlayer then
+			base = v
+			square = v.OriginSquare
+			end
+		end
+	function makebase(pos)
+		local Event = game:GetService("ReplicatedStorage").PropertyPurchasing.ClientExpandedProperty
+		Event:FireServer(base, pos)
+		end
+	spos = square.Position
+	makebase(CFrame.new(spos.X + 40, spos.Y, spos.Z))
+	makebase(CFrame.new(spos.X - 40, spos.Y, spos.Z))
+	makebase(CFrame.new(spos.X, spos.Y, spos.Z + 40))
+	makebase(CFrame.new(spos.X, spos.Y, spos.Z - 40))
+	makebase(CFrame.new(spos.X + 40, spos.Y, spos.Z + 40))
+	makebase(CFrame.new(spos.X + 40, spos.Y, spos.Z - 40))
+	makebase(CFrame.new(spos.X - 40, spos.Y, spos.Z + 40))
+	makebase(CFrame.new(spos.X - 40, spos.Y, spos.Z - 40))
+	makebase(CFrame.new(spos.X + 80, spos.Y, spos.Z))
+	makebase(CFrame.new(spos.X - 80, spos.Y, spos.Z))
+	makebase(CFrame.new(spos.X, spos.Y, spos.Z + 80))
+	makebase(CFrame.new(spos.X, spos.Y, spos.Z - 80))
+--Corners--
+	makebase(CFrame.new(spos.X + 80, spos.Y, spos.Z + 80))
+	makebase(CFrame.new(spos.X + 80, spos.Y, spos.Z - 80))
+	makebase(CFrame.new(spos.X - 80, spos.Y, spos.Z + 80))
+	makebase(CFrame.new(spos.X - 80, spos.Y, spos.Z - 80))
+--Corners--
+	makebase(CFrame.new(spos.X + 40, spos.Y, spos.Z + 80))
+	makebase(CFrame.new(spos.X - 40, spos.Y, spos.Z + 80))
+	makebase(CFrame.new(spos.X + 80, spos.Y, spos.Z + 40))
+	makebase(CFrame.new(spos.X + 80, spos.Y, spos.Z - 40))
+	makebase(CFrame.new(spos.X - 80, spos.Y, spos.Z + 40))
+	makebase(CFrame.new(spos.X - 80, spos.Y, spos.Z - 40))
+	makebase(CFrame.new(spos.X + 40, spos.Y, spos.Z - 80))
+	makebase(CFrame.new(spos.X - 40, spos.Y, spos.Z - 80))
+	
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+  Title = "yapımcı fenasikurt12",
+  Text = ""
+})
+
+local players = game:GetService('Players')
+if game.Players.LocalPlayer then 
+game.StarterGui:SetCore('SendNotification', {
+    Title = ' '.. players.LocalPlayer.Name..'!',
+    Text = 'Max Land Başarılı.',
+    Icon = [[http://www.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&userName=]]..players.LocalPlayer.Name..[[&RAND]] .. math.random(1,10000000),
+    Duration = 5,
+   })
+  end
